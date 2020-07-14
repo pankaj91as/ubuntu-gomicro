@@ -8,6 +8,7 @@ RUN cd /tmp
 RUN wget https://golang.org/dl/go$VERSION.$OS-$ARCH.tar.gz
 RUN tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
 ENV PATH=$PATH:/usr/local/go/bin:/root/go/bin
+RUN rm -rf /go$VERSION.$OS-$ARCH.tar.gz
 ENV GOBIN=/root/go/bin
 ENV GO111MODULE=on
 RUN go env
